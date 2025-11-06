@@ -73,4 +73,13 @@ router.post("/buscarContacto", async (req, res) => {
   res.render("mostrarContactos", { contactosBD });
 });
 
+//PARA CONTACTANOS
+router.get("/contacto", (req, res) => {
+  res.render("contact")
+})
+//PARA CONTACTANOS
+router.post("/enviar-contacto", (req, res) => {
+  const { nombre, edad } = req.body
+  res.send(`Gracias ${nombre}, hemos recibido tu información. Tu edad es ${edad}.`)
+})
 export default router;
